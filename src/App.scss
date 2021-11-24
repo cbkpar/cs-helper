@@ -1,0 +1,38 @@
+.App {
+  background: #e5e5e5;
+}
+
+.main {
+  margin : 0;
+  padding-top: 50px;
+  background: #f4f6f9;
+}
+
+.ir_pm {
+  display:block;
+  overflow:hidden;
+  font-size:0;
+  line-height:0;
+  text-indent:-9999px;
+}
+
+/* a reset */
+a {color: #fff; text-decoration: none; outline: none}
+a:active {text-decoration: none; color:#fff;}
+a:hover {color: #fdd8d8;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 스크롤바 제거 */
+body { -ms-overflow-style: none; }
+::-webkit-scrollbar { display: none; }
