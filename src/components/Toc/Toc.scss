@@ -1,0 +1,140 @@
+.content {
+  margin-top: 50px;
+  padding: 16px;
+}
+
+.container-lg {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 120px
+}
+
+.toc-list {
+
+  li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .toc-link:hover {
+    background-color: rgba(255, 82, 82, 0.05);
+    padding: 0 5px;
+    border-radius: 5px;
+    color : #000;
+  }
+
+  .is-active-link {
+    background-color: rgba(255, 82, 82, 0.15);
+    padding: 0 5px;
+    border-radius: 5px;
+
+  }
+}
+
+@media (min-width: 880px) {
+  .article-container {
+      -webkit-box-orient:horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start
+  }
+}
+
+.article-sidebar {
+  width: 200px;
+  margin-left: 30px;
+}
+
+@media (max-width: 1023px) {
+  .article-sidebar {
+    display: none;
+  }
+}
+
+.article-sidebar .toc {
+  position:-webkit-sticky;
+  position: sticky;
+  top: 70px 
+}
+
+@media (min-width: 880px) {
+  .article-content {
+      margin-top: 0;
+      max-width: 750px;
+      padding-left: calc(-30.5px + 6.875vw);
+  }
+}
+
+.article-content h1 a,
+.article-content h2 a,
+.article-content h3 a {
+  text-decoration: none!important
+}
+
+.article-content p {
+  font-family: Camphor,Open Sans,Segoe UI,sans-serif;
+  font-size: 17px;
+  line-height: 28px;
+  color: #525f7f;
+  margin-bottom: 20px
+}
+
+.article-content h1 {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  color: #32325d;
+  margin-top: 60px
+}
+
+.article-content h1:first-child {
+  margin-top: 0;
+}
+
+.article-content h1 a {
+  color: #32325d
+}
+
+.article-content h2 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  color: #32325d;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.article-content h2 a {
+  color: #32325d
+}
+
+.article-content h3 {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 28px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #32325d
+}
+
+
+.article-content h1::before, .article-content h2::before, .article-content h3::before {
+  display: block;
+  content: " ";
+  height: 60px;
+  margin-top: -60px;
+  visibility: hidden;
+}
