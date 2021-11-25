@@ -9,6 +9,7 @@ export default () => (
     <Routes>
       <Route exact path='/' element={<Home />} />
       <Route path='/Algorithm/*' element={<Algo />} />
+      <Route path='*' element={<Home />} />
     </Routes>
   </BrowserRouter>
 );
