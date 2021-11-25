@@ -98,6 +98,7 @@ figure.snip1200 h2 {
   width: auto;
   text-transform: uppercase;
   font-weight: 400;
+  background-color: rgba(0,0,0,0.3);
 }
 figure.snip1200 h2 span {
   font-weight: 800;
@@ -137,6 +138,9 @@ figure.snip1200 a {
   bottom: 0;
   position: absolute;
   z-index: 1;
+}
+figure.snip1200:hover h2 {
+  background: none;
 }
 figure.snip1200:hover img,
 figure.snip1200.hover img {

@@ -74,7 +74,7 @@ class Summary extends Component {
                 <p>ex) 구구단, 버블 정렬, 선택 정렬, 삽입 정렬</p>
                 <h3 id="O(n^3)">O(n^3)</h3>
                 <p>데이터의 개수에 세제곱한 만큼 연산이 필요한 알고리즘</p>
-                <p>ex) 플로이드-와샬, 벨만포드 알고리즘</p>
+                <p>ex) 플로이드-와샬</p>
                 <h1 id="출처">출처</h1>
                 <p><a href="https://opentutorials.org/course/2471/13912" target="_blank">프로그래밍 입문 - 알고리즘의 정의</a></p>
                 <p><a href="https://madplay.github.io/post/time-complexity-space-complexity" target="_blank">시간복잡도와 공간복잡도</a></p>
