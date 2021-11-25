@@ -4,6 +4,8 @@ object-assign
 @license MIT
 */
 
+/*! For license information please see main.js.LICENSE.txt */
+
 /**
  * React Router DOM v6.0.2
  *
