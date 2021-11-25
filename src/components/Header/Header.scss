@@ -51,5 +51,10 @@
   a {
     font-weight: 700;
   }
+}
 
+@media (max-width: 600px) {
+  .header ul {
+    display: none;
+  }
 }

@@ -56,7 +56,7 @@ class Summary extends Component {
                 <h2 id="시간복잡도">Big-O 시간 복잡도</h2>
                 <h3 id="시간복잡도비교">시간 복잡도 비교</h3>
                 <img src={process.env.PUBLIC_URL + '/img/Algorithm/bigO.png'} alt="Big-O Complexity" />
-                <p>O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n2) &lt; O(n3) &lt; O(2n) &lt; O(n!)</p>
+                <p>O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n^2) &lt; O(n^3) &lt; O(2^n) &lt; O(n!)</p>
                 <div className="video"><iframe src="https://www.youtube.com/embed/6Iq5iMCVsXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                 <h3 id="O(1)">O(1)</h3>
                 <p>데이터의 개수와 상관 없이 1번의 연산이 필요한 알고리즘</p>
