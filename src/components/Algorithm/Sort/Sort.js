@@ -4,6 +4,7 @@ import ReactEmbedGist from 'react-embed-gist';
 import BubbleSort from './BubbleSort';
 import SelectionSort from './SelectionSort';
 import InsertionSort from './InsertionSort';
+import MergeSort from './MergeSort';
 import './Sort.scss';
 
 class Sort extends Component {
@@ -51,7 +52,19 @@ class Sort extends Component {
                     loadingClass="loading__screen"
                   />
                 </div>
-                <h3 id="머지정렬">머지 정렬</h3>
+                <h3 id="병합정렬">합병 정렬</h3>
+                <p>분할 정복(Divide and Conquer)의 방법을 사용하여 정렬</p>
+                <img src={process.env.PUBLIC_URL + '/img/Algorithm/merge-sort.png'} alt="merge-sort" />
+                <p>주어진 배열을 더이상 쪼갤 수 없을 때 까지 쪼갠 후에 하나로 합치며 정렬한다.</p>
+                <div className="video"><iframe src="https://www.youtube.com/embed/QAyl79dCO_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div className="sortchart">
+                  <MergeSort />
+                </div>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/ea75edc6bbc7baabd233763ac3ce63b9"
+                    loadingClass="loading__screen"
+                  />
+                </div>
                 <h3 id="힙정렬">힙 정렬</h3>
                 <h3 id="퀵정렬">퀵 정렬</h3>
                 <h2 id="분산식정렬">분산식 정렬</h2>
@@ -60,7 +73,7 @@ class Sort extends Component {
                 </p>
                 <h3 id="계수정렬">계수 정렬</h3>
                 <h3 id="기수정렬">기수 정렬</h3>
-                <h2 id="비교">비교</h2>
+                <h2 id="시간복잡도비교">시간복잡도 비교</h2>
                 <img src={process.env.PUBLIC_URL + '/img/Algorithm/sort-time-complexity2.png'} alt="Sort-complexity" />
                 <p>버블, 선택, 삽입 정렬의 경우 모두 시간복잡도가 O(n^2) 이지만 평균적으로는 삽입정렬이 그중 가장 효율이 좋다.</p>
                 <img src={process.env.PUBLIC_URL + '/img/Algorithm/sort-time-complexity.png'} alt="Sort-complexity" />
@@ -73,6 +86,7 @@ class Sort extends Component {
                 <p><a href="https://medium.com/@joongwon/%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B8%B0%EC%B4%88-805391cb088e" target="_blank">정렬 알고리즘의 기초</a></p>
                 <p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank">선택 정렬 이란</a></p>
                 <p><a href="https://velog.io/@dongchyeon/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%82%BD%EC%9E%85-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-gnrmum6r" target="_blank">[알고리즘] 삽입 정렬 알고리즘</a></p>
+                <p><a href="https://st-lab.tistory.com/233" target="_blank">자바 [JAVA] - 합병정렬 / 병합정렬 (Merge Sort)</a></p>
               </article>
 
               <div className="article-sidebar">

@@ -22,7 +22,7 @@ class Articles extends Component {
             <figure class="snip1200">
               <img src={process.env.PUBLIC_URL + '/img/Algorithm/Sort.png'} alt="Sort" />
               <figcaption>
-                <p>버블 정렬, 선택 정렬, 삽입 정렬, 머지 정렬, 힙 정렬, 퀵 정렬, 계수 정렬, 기수 정렬</p>
+                <p>버블 정렬, 선택 정렬, 삽입 정렬, 합병 정렬, 힙 정렬, 퀵 정렬, 계수 정렬, 기수 정렬</p>
                 <div class="heading">
                   <h2><span>정렬</span></h2>
                 </div>

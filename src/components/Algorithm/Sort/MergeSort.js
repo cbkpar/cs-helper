@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles, mergeClasses } from "@material-ui/styles";
 import { Button } from "@material-ui/core";
 
 const userStyle = makeStyles({
@@ -31,13 +31,14 @@ const initArray = (min, max, amount) => {
 let cmps = 0;
 let keyA = 0;
 
-const InsertionSort = props => {
+const MergeSort = props => {
   const classes = userStyle();
   const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 20)));
   const [array, setArray] = useState([]);
   const [maxVal, setMaxVal] = useState(0);
   const [sortingIndexA, setSortingIndexA] = useState(0);
   const [sortingIndexB, setSortingIndexB] = useState(0);
+  const [sortingIndexC, setSortingIndexC] = useState(0);
 
   const start = (e) => {
     e.preventDefault();
@@ -54,24 +55,43 @@ const InsertionSort = props => {
     });
   }
 
-  const Sort = async arr => {
+  async function partition(arr, left, right, keyB) {
+    if (left == right) return;
+    let mid = Math.floor((left + right) / 2);
+    await partition(arr, left, mid, keyB);
+    await partition(arr, mid + 1, right, keyB);
+    await merge(arr, left, right, keyB);
+  }
+
+  async function merge(arr, left, right, keyB) {
+    let mid = Math.floor((left + right) / 2);
+    let l = left;
+    let r = mid + 1;
+    let tmp = [];
+    let cnt = 0;
+    while (l <= mid && r <= right) {
+      tmp.push(arr[l] <= arr[r] ? arr[l++] : arr[r++]);
+      cnt++;
+    }
+    while (l <= mid) tmp.push(arr[l++]);
+    while (r <= right) tmp.push(arr[r++]);
+    for (let i = 0; i < right - left + 1; i++) {
+      await later(50);
+      if (keyA != keyB) return;
+      if (cnt-- > 0) cmps++;
+      setSortingIndexA(left);
+      setSortingIndexB(left + i);
+      setSortingIndexC(right);
+      arr[left + i] = tmp[i];
+      setArray(Object.assign([], arr));
+    }
+    setArray(Object.assign([], arr));
+  }
+
+  const Sort = arr => {
     cmps = 0;
     let keyB = ++keyA;
-    for (let i = 1; i < arr.length; i++) {
-      let tmp = arr[i];
-      let j = i - 1;
-      while (j >= 0 && tmp < arr[j]) {
-        arr[j + 1] = arr[j];
-        await later(50);
-        if (keyA != keyB) return;
-        cmps++;
-        setArray(Object.assign([], arr));
-        setSortingIndexA(i);
-        setSortingIndexB(j);
-        j--;
-      }
-      arr[j + 1] = tmp;
-    }
+    partition(arr, 0, arr.length - 1, keyB);
   };
 
   return (
@@ -82,7 +102,7 @@ const InsertionSort = props => {
           <div
             className={classes.bar}
             style={{
-              background: sortingIndexA === index ? "#ff005c" : sortingIndexB === index ? "#ff6d00" : "dodgerblue",
+              background: sortingIndexA === index ? "#ff005c" : sortingIndexB === index ? "#009900" : sortingIndexC === index ? "#ff6d00" : "dodgerblue",
               width: `${100 / array.length}%`,
               height: `${(value * 100) / maxVal}%`
             }}
@@ -93,9 +113,9 @@ const InsertionSort = props => {
         <Button variant="outlined" style={{
           width: 100 + "%",
           fontWeight: 'bold'
-        }} onClick={start}>삽입정렬 시작</Button>
+        }} onClick={start}>합병정렬 시작</Button>
       </div>
     </>
   );
 };
-export default InsertionSort;
+export default MergeSort;
