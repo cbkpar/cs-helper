@@ -1,6 +1,9 @@
 import { Component, Fragment } from 'react';
 import { Tocbot } from '../../Toc/Toc';
 import ReactEmbedGist from 'react-embed-gist';
+import BubbleSort from './BubbleSort';
+import SelectionSort from './SelectionSort';
+import './Sort.scss';
 
 class Sort extends Component {
   render() {
@@ -16,12 +19,26 @@ class Sort extends Component {
                   각 값을 2개씩 비교하여 교환하는 방법으로 정렬
                 </p>
                 <h3 id="버블정렬">버블 정렬</h3>
+                <p>서로 <strong>인접한</strong> 값을 비교하며 순서대로 되어 있지 않으면 서로 교환한다.</p>
+                <div className="sortchart">
+                  <BubbleSort />
+                </div>
                 <div className="gist">
                   <ReactEmbedGist gist="cbkpar/3d72219d1df78c00a5cc63249517a2c3"
                     loadingClass="loading__screen"
                   />
                 </div>
                 <h3 id="선택정렬">선택 정렬</h3>
+                <p>데이터에서 가장 작은 값을 선택하여 가장 앞의 데이터와 교환 해나간다.</p>
+                <img src={process.env.PUBLIC_URL + '/img/Algorithm/selection-sort.png'} alt="selection-sort" />
+                <div className="sortchart">
+                  <SelectionSort />
+                </div>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/995cd825e90797bb7c1afc658a31dbc7"
+                    loadingClass="loading__screen"
+                  />
+                </div>
                 <h3 id="삽입정렬">삽입 정렬</h3>
                 <h3 id="머지정렬">머지 정렬</h3>
                 <h3 id="힙정렬">힙 정렬</h3>
@@ -40,10 +57,8 @@ class Sort extends Component {
                   에서 애니메이션으로 비교해 볼 수 있다.
                 </p>
                 <h1 id="출처">출처</h1>
-                <p>
-                  <a href="https://medium.com/@joongwon/%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B8%B0%EC%B4%88-805391cb088e" target="_blank">정렬 알고리즘의 기초</a>
-
-                </p>
+                <p><a href="https://medium.com/@joongwon/%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B8%B0%EC%B4%88-805391cb088e" target="_blank">정렬 알고리즘의 기초</a></p>
+                <p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank">선택 정렬 이란</a></p>
               </article>
 
               <div className="article-sidebar">
