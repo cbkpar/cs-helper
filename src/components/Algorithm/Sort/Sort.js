@@ -3,6 +3,7 @@ import { Tocbot } from '../../Toc/Toc';
 import ReactEmbedGist from 'react-embed-gist';
 import BubbleSort from './BubbleSort';
 import SelectionSort from './SelectionSort';
+import InsertionSort from './InsertionSort';
 import './Sort.scss';
 
 class Sort extends Component {
@@ -40,6 +41,16 @@ class Sort extends Component {
                   />
                 </div>
                 <h3 id="삽입정렬">삽입 정렬</h3>
+                <p>앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘</p>
+                <img src={process.env.PUBLIC_URL + '/img/Algorithm/insert-sort.png'} alt="insert-sort" />
+                <div className="sortchart">
+                  <InsertionSort />
+                </div>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/91a3f5529b86573f37fbec320e18b481"
+                    loadingClass="loading__screen"
+                  />
+                </div>
                 <h3 id="머지정렬">머지 정렬</h3>
                 <h3 id="힙정렬">힙 정렬</h3>
                 <h3 id="퀵정렬">퀵 정렬</h3>
@@ -50,6 +61,8 @@ class Sort extends Component {
                 <h3 id="계수정렬">계수 정렬</h3>
                 <h3 id="기수정렬">기수 정렬</h3>
                 <h2 id="비교">비교</h2>
+                <img src={process.env.PUBLIC_URL + '/img/Algorithm/sort-time-complexity2.png'} alt="Sort-complexity" />
+                <p>버블, 선택, 삽입 정렬의 경우 모두 시간복잡도가 O(n^2) 이지만 평균적으로는 삽입정렬이 그중 가장 효율이 좋다.</p>
                 <img src={process.env.PUBLIC_URL + '/img/Algorithm/sort-time-complexity.png'} alt="Sort-complexity" />
                 <p>
                   다양한 정렬을 
@@ -59,6 +72,7 @@ class Sort extends Component {
                 <h1 id="출처">출처</h1>
                 <p><a href="https://medium.com/@joongwon/%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B8%B0%EC%B4%88-805391cb088e" target="_blank">정렬 알고리즘의 기초</a></p>
                 <p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank">선택 정렬 이란</a></p>
+                <p><a href="https://velog.io/@dongchyeon/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%82%BD%EC%9E%85-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-gnrmum6r" target="_blank">[알고리즘] 삽입 정렬 알고리즘</a></p>
               </article>
 
               <div className="article-sidebar">

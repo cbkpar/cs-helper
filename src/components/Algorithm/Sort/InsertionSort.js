@@ -32,14 +32,13 @@ let cmps = 0;
 let now = 0;
 let keyA = 0;
 
-const SelectionSort = props => {
+const InsertionSort = props => {
   const classes = userStyle();
   const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 20)));
   const [array, setArray] = useState([]);
   const [maxVal, setMaxVal] = useState(0);
   const [sortingIndexA, setSortingIndexA] = useState(0);
   const [sortingIndexB, setSortingIndexB] = useState(0);
-  const [sortingIndexC, setSortingIndexC] = useState(0);
 
   const start = (e) => {
     e.preventDefault();
@@ -50,36 +49,29 @@ const SelectionSort = props => {
     Sort(masterCopy);
   }
 
-  const Sort = arr => {
+  function later(delay) {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, delay);
+    });
+  }
+
+  const Sort = async arr => {
     cmps = 0;
-    now = 0;
     let keyB = ++keyA;
-    for (let i = 0; i < arr.length - 1; i++) {
-      let idx = i;
-      for (let j = i + 1; j < arr.length + 1; j++) {
-        setTimeout(() => {
-          if (keyA != keyB) return;
-          if (j === arr.length) {
-            if (i === idx) return;
-            let tmp = arr[i];
-            arr[i] = arr[idx];
-            arr[idx] = tmp;
-            setArray(Object.assign([], arr));
-            setSortingIndexA(i);
-            setSortingIndexB(idx);
-            setSortingIndexC(j);
-            return;
-          } else if (arr[j] < arr[idx]) {
-            idx = j;
-          }
-          cmps++;
-          setArray(Object.assign([], arr));
-          setSortingIndexA(i);
-          setSortingIndexB(idx);
-          setSortingIndexC(j);
-        }, 50 * (now));
-        now++;
+    for (let i = 1; i < arr.length; i++) {
+      let tmp = arr[i];
+      let j = i - 1;
+      while (j >= 0 && tmp < arr[j]) {
+        arr[j + 1] = arr[j];
+        await later(50);
+        if (keyA != keyB) return;
+        cmps++;
+        setArray(Object.assign([], arr));
+        setSortingIndexA(i);
+        setSortingIndexB(j);
+        j--;
       }
+      arr[j + 1] = tmp;
     }
   };
 
@@ -91,7 +83,7 @@ const SelectionSort = props => {
           <div
             className={classes.bar}
             style={{
-              background: sortingIndexA === index ? "#ff005c" : sortingIndexB === index ? "#ff6d00" : sortingIndexC === index ? "#ff6d5c" : "dodgerblue",
+              background: sortingIndexA === index ? "#ff005c" : sortingIndexB === index ? "#ff6d00" : "dodgerblue",
               width: `${100 / array.length}%`,
               height: `${(value * 100) / maxVal}%`
             }}
@@ -102,9 +94,9 @@ const SelectionSort = props => {
         <Button variant="outlined" style={{
           width: 100 + "%",
           fontWeight: 'bold'
-        }} onClick={start}>선택정렬 시작</Button>
+        }} onClick={start}>삽입정렬 시작</Button>
       </div>
     </>
   );
 };
-export default SelectionSort;
+export default InsertionSort;
