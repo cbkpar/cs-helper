@@ -8,6 +8,7 @@ import MergeSort from './MergeSort';
 import HeapSort from './HeapSort';
 import QuickSort from './QuickSort';
 import CountSort from './CountSort';
+import RadixSort from './RadixSort';
 import './Sort.scss';
 
 class Sort extends Component {
@@ -106,7 +107,7 @@ class Sort extends Component {
                   값들을 여러개의 부분 집합으로 분해하고 정렬하여 전체를 정렬하는 방법
                 </p>
                 <h3 id="계수정렬">계수 정렬</h3>
-                <p>값의 범위가 크지 않고 데이터의 수가 클 때 유용한 알고리즘</p>
+                <p>값의 범위가 크지 않고 데이터의 수가 클 때 유용한 정렬방법</p>
                 <p>원소의 범위 크기에 해당하는 배열을 만들고 데이터의 값을 넣고 개수를 세서 정렬</p>
                 <p>시간복잡도 : O(n+k) [n : 데이터의 수, k : 데이터의 범위]</p>
                 <div className="sortchart">
@@ -117,17 +118,38 @@ class Sort extends Component {
                     loadingClass="loading__screen"
                   />
                 </div>
-                
                 <h3 id="기수정렬">기수 정렬</h3>
+                <p>기수 별로 비교 없이 정렬하는 방법</p>
+                <p>기수란 집합의 크기를 나타내는 수이다</p>
+                <p>크기가 유한하고 사전순으로 정렬할 수 있어야 한다</p>
+                <p>부동소수점 실수일때는 적용이 불가능하다</p>
+                <p>시간복잡도 : O(nw) [n : 데이터의 수, w : 데이터 최대값의 길이]</p>
+                <img src={process.env.PUBLIC_URL + '/img/Algorithm/radix-sort.png'} alt="radix-sort" />
+                <div className="sortchart">
+                  <RadixSort />
+                </div>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/7e2c7b8a562d661e8284d4955e66a002"
+                    loadingClass="loading__screen"
+                  />
+                </div>
                 <h2 id="시간복잡도비교">시간복잡도 비교</h2>
                 <img src={process.env.PUBLIC_URL + '/img/Algorithm/sort-time-complexity2.png'} alt="Sort-complexity" />
                 <p>버블, 선택, 삽입 정렬의 경우 모두 시간복잡도가 O(n^2) 이지만 평균적으로는 삽입정렬이 그중 가장 효율이 좋다.</p>
                 <img src={process.env.PUBLIC_URL + '/img/Algorithm/sort-time-complexity.png'} alt="Sort-complexity" />
                 <p>
-                  다양한 정렬을 
+                  다양한 정렬을
                   <a href="https://www.toptal.com/developers/sorting-algorithms" target="_blank"><strong> [여기] </strong></a>
                   에서 애니메이션으로 비교해 볼 수 있다.
                 </p>
+                <h2 id="안정정렬">안정 정렬</h2>
+                <p>동일한 값에 대해 기존의 순서가 유지되는 정렬 방식</p>
+                <p>버블, 삽입, 병합 정렬</p>
+                <p>ex) 1 5 2 1* 4 3 → 1 1* 2 3 4 5</p>
+                <h2 id="불안정정렬">불안정 정렬</h2>
+                <p>동일한 값에 대해 기존의 순서가 바뀔수 있는 정렬 방식</p>
+                <p>선택, 힙, 퀵 정렬</p>
+                <p>ex) 1 5 2 1* 4 3 → 1* 1 2 3 4 5</p>
                 <h1 id="출처">출처</h1>
                 <p><a href="https://medium.com/@joongwon/%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B8%B0%EC%B4%88-805391cb088e" target="_blank">정렬 알고리즘의 기초</a></p>
                 <p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank">선택 정렬 이란</a></p>
@@ -137,7 +159,6 @@ class Sort extends Component {
                 <p><a href="https://www.daleseo.com/sort-quick/" target="_blank">[알고리즘] 퀵 정렬 - Quick Sort (Python, Java)</a></p>
                 <p><a href="https://ko.wikipedia.org/wiki/%ED%80%B5_%EC%A0%95%EB%A0%AC" target="_blank">위키백과 - 퀵 정렬</a></p>
               </article>
-
               <div className="article-sidebar">
                 <nav className="toc js-toc">
                 </nav>
