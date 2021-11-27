@@ -5,6 +5,7 @@ import BubbleSort from './BubbleSort';
 import SelectionSort from './SelectionSort';
 import InsertionSort from './InsertionSort';
 import MergeSort from './MergeSort';
+import HeapSort from './HeapSort';
 import './Sort.scss';
 
 class Sort extends Component {
@@ -66,6 +67,21 @@ class Sort extends Component {
                   />
                 </div>
                 <h3 id="힙정렬">힙 정렬</h3>
+                <p>힙 정렬은 <strong>힙 트리 구조</strong>를 이용하는 정렬 방법이다. </p>
+                <p>힙 정렬을 수행하기 전에 우선 <strong>최대 힙 생성 알고리즘</strong>을 사용한다.</p>
+                <p>최대 힙 생성 알고리즘은 특정한 노드의 두 자식중 더 큰 자식과 자신의 위치를 바꾸는 알고리즘</p>
+                <p>힙의 루트에는 항상 가장 큰 값이 들어가게 되므로 배열의 n번째 값과 치환하며 힙정렬을 수행한다</p>
+                <p>한번 수행할때마다 n을 1씩 줄여가며 n이 0보다 클때까지 진행한다</p>
+                <div className="video"><iframe src="https://www.youtube.com/embed/iyl9bfp_8ag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <img src={process.env.PUBLIC_URL + '/img/Algorithm/heap-sort.png'} alt="heap-sort" />
+                <div className="sortchart">
+                  <HeapSort />
+                </div>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/3f67e30f7e8a20b6b30729adc0353efd"
+                    loadingClass="loading__screen"
+                  />
+                </div>
                 <h3 id="퀵정렬">퀵 정렬</h3>
                 <h2 id="분산식정렬">분산식 정렬</h2>
                 <p>
@@ -87,6 +103,7 @@ class Sort extends Component {
                 <p><a href="https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html" target="_blank">선택 정렬 이란</a></p>
                 <p><a href="https://velog.io/@dongchyeon/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%82%BD%EC%9E%85-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-gnrmum6r" target="_blank">[알고리즘] 삽입 정렬 알고리즘</a></p>
                 <p><a href="https://st-lab.tistory.com/233" target="_blank">자바 [JAVA] - 합병정렬 / 병합정렬 (Merge Sort)</a></p>
+                <p><a href="https://blog.naver.com/ndb796/221228342808" target="_blank">힙 정렬(Heap Sort)</a></p>
               </article>
 
               <div className="article-sidebar">
