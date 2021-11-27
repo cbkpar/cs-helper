@@ -33,7 +33,7 @@ let keyA = 0;
 
 const HeapSort = props => {
   const classes = userStyle();
-  const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 20)));
+  const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 50)));
   const [array, setArray] = useState([]);
   const [maxVal, setMaxVal] = useState(0);
   const [sortingIndexA, setSortingIndexA] = useState(0);
@@ -42,7 +42,7 @@ const HeapSort = props => {
 
   const start = (e) => {
     e.preventDefault();
-    setArr(initArray(1, 20, 20));
+    setArr(initArray(1, 100, 50));
     setMaxVal(Math.max(...masterArr) + 1);
     let masterCopy = Object.assign([], masterArr);
     setArray(Object.assign([], masterCopy));
@@ -53,39 +53,6 @@ const HeapSort = props => {
     return new Promise(function (resolve) {
       setTimeout(resolve, delay);
     });
-  }
-
-  async function partition(arr, left, right, keyB) {
-    if (left == right) return;
-    let mid = Math.floor((left + right) / 2);
-    await partition(arr, left, mid, keyB);
-    await partition(arr, mid + 1, right, keyB);
-    await merge(arr, left, right, keyB);
-  }
-
-  async function merge(arr, left, right, keyB) {
-    let mid = Math.floor((left + right) / 2);
-    let l = left;
-    let r = mid + 1;
-    let tmp = [];
-    let cnt = 0;
-    while (l <= mid && r <= right) {
-      tmp.push(arr[l] <= arr[r] ? arr[l++] : arr[r++]);
-      cnt++;
-    }
-    while (l <= mid) tmp.push(arr[l++]);
-    while (r <= right) tmp.push(arr[r++]);
-    for (let i = 0; i < right - left + 1; i++) {
-      await later(50);
-      if (keyA != keyB) return;
-      if (cnt-- > 0) cmps++;
-      setSortingIndexA(left);
-      setSortingIndexB(left + i);
-      setSortingIndexC(right);
-      arr[left + i] = tmp[i];
-      setArray(Object.assign([], arr));
-    }
-    setArray(Object.assign([], arr));
   }
 
   async function heapify(arr, n, idx, keyB) {

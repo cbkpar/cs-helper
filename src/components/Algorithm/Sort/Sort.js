@@ -6,6 +6,7 @@ import SelectionSort from './SelectionSort';
 import InsertionSort from './InsertionSort';
 import MergeSort from './MergeSort';
 import HeapSort from './HeapSort';
+import QuickSort from './QuickSort';
 import './Sort.scss';
 
 class Sort extends Component {
@@ -83,6 +84,22 @@ class Sort extends Component {
                   />
                 </div>
                 <h3 id="퀵정렬">퀵 정렬</h3>
+                <p>분할 정복과 재귀를 이용하여 정렬하는 알고리즘</p>
+                <p>평균적으로 O(nlogn)이지만 최악의 경우 O(n^2)이다.</p>
+                <img src={process.env.PUBLIC_URL + '/img/Algorithm/quick-sort.png'} alt="quick-sort" />
+                <p>리스트 가운데서 하나의 원소를 고르고 피벗이라 한다</p>
+                <p>피벗 앞은 피벗보다 값이 작은 원소, 피벗 뒤는 값이 큰 원소로 나눈다.</p>
+                <p>재귀적으로 위 방법을 반복하여 리스트의 크기가 1과 같거나 작을때까지 반복한다.</p>
+                <p>재귀 호출이 한번 진행 될 때마다 최소 하나 이상의 원소 위치가 정해지므로 유한성이 보장된다.</p>
+                <div className="video"><iframe width="1280" height="720" src="https://www.youtube.com/embed/7BDzle2n47c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div className="sortchart">
+                  <QuickSort />
+                </div>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/45af66146c58c003fc74c1ee8b189749"
+                    loadingClass="loading__screen"
+                  />
+                </div>
                 <h2 id="분산식정렬">분산식 정렬</h2>
                 <p>
                   값들을 여러개의 부분 집합으로 분해하고 정렬하여 전체를 정렬하는 방법
@@ -104,6 +121,8 @@ class Sort extends Component {
                 <p><a href="https://velog.io/@dongchyeon/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%82%BD%EC%9E%85-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-gnrmum6r" target="_blank">[알고리즘] 삽입 정렬 알고리즘</a></p>
                 <p><a href="https://st-lab.tistory.com/233" target="_blank">자바 [JAVA] - 합병정렬 / 병합정렬 (Merge Sort)</a></p>
                 <p><a href="https://blog.naver.com/ndb796/221228342808" target="_blank">힙 정렬(Heap Sort)</a></p>
+                <p><a href="https://www.daleseo.com/sort-quick/" target="_blank">[알고리즘] 퀵 정렬 - Quick Sort (Python, Java)</a></p>
+                <p><a href="https://ko.wikipedia.org/wiki/%ED%80%B5_%EC%A0%95%EB%A0%AC" target="_blank">위키백과 - 퀵 정렬</a></p>
               </article>
 
               <div className="article-sidebar">

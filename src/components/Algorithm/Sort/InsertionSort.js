@@ -33,7 +33,7 @@ let keyA = 0;
 
 const InsertionSort = props => {
   const classes = userStyle();
-  const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 20)));
+  const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 50)));
   const [array, setArray] = useState([]);
   const [maxVal, setMaxVal] = useState(0);
   const [sortingIndexA, setSortingIndexA] = useState(0);
@@ -41,7 +41,7 @@ const InsertionSort = props => {
 
   const start = (e) => {
     e.preventDefault();
-    setArr(initArray(1, 20, 20));
+    setArr(initArray(1, 100, 50));
     setMaxVal(Math.max(...masterArr) + 1);
     let masterCopy = Object.assign([], masterArr);
     setArray(Object.assign([], masterCopy));
@@ -62,7 +62,7 @@ const InsertionSort = props => {
       let j = i - 1;
       while (j >= 0 && tmp < arr[j]) {
         arr[j + 1] = arr[j];
-        await later(50);
+        await later(10);
         if (keyA != keyB) return;
         cmps++;
         setArray(Object.assign([], arr));

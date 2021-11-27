@@ -43,7 +43,7 @@ const BubbleSort = props => {
   // It works like this:
   // const [var, targetMethod] = useState(arg from targetMethod);
   // Object.assign(target, source);
-  const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 20)));
+  const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 50)));
   // This "array" var will hold the sorted array
   const [array, setArray] = useState([]);
   // Sets maximum value of array used for setting scale of bars.
@@ -58,7 +58,7 @@ const BubbleSort = props => {
 
   const start = (e) => {
     e.preventDefault();
-    setArr(initArray(1, 20, 20));
+    setArr(initArray(1, 100, 50));
     setMaxVal(Math.max(...masterArr) + 1);
     let masterCopy = Object.assign([], masterArr);
     setArray(Object.assign([], masterCopy));
@@ -82,7 +82,7 @@ const BubbleSort = props => {
             setArray(Object.assign([], arr));
           }
           setSortingIndex(j);
-        }, 50*(now));
+        }, 10*(now));
         now++;
       }
     }

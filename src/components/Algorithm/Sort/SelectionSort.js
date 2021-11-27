@@ -34,7 +34,7 @@ let keyA = 0;
 
 const SelectionSort = props => {
   const classes = userStyle();
-  const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 20)));
+  const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 50)));
   const [array, setArray] = useState([]);
   const [maxVal, setMaxVal] = useState(0);
   const [sortingIndexA, setSortingIndexA] = useState(0);
@@ -43,7 +43,7 @@ const SelectionSort = props => {
 
   const start = (e) => {
     e.preventDefault();
-    setArr(initArray(1, 20, 20));
+    setArr(initArray(1, 100, 50));
     setMaxVal(Math.max(...masterArr) + 1);
     let masterCopy = Object.assign([], masterArr);
     setArray(Object.assign([], masterCopy));
@@ -77,7 +77,7 @@ const SelectionSort = props => {
           setSortingIndexA(i);
           setSortingIndexB(idx);
           setSortingIndexC(j);
-        }, 50 * (now));
+        }, 10 * (now));
         now++;
       }
     }

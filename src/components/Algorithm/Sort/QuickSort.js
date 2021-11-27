@@ -31,7 +31,7 @@ const initArray = (min, max, amount) => {
 let cmps = 0;
 let keyA = 0;
 
-const MergeSort = props => {
+const QuickSort = props => {
   const classes = userStyle();
   const [masterArr, setArr] = useState(Object.assign([], initArray(1, 100, 50)));
   const [array, setArray] = useState([]);
@@ -56,42 +56,50 @@ const MergeSort = props => {
   }
 
   async function partition(arr, left, right, keyB) {
-    if (left == right) return;
-    let mid = Math.floor((left + right) / 2);
-    await partition(arr, left, mid, keyB);
-    await partition(arr, mid + 1, right, keyB);
-    await merge(arr, left, right, keyB);
-  }
-
-  async function merge(arr, left, right, keyB) {
-    let mid = Math.floor((left + right) / 2);
-    let l = left;
-    let r = mid + 1;
-    let tmp = [];
-    let cnt = 0;
-    while (l <= mid && r <= right) {
-      tmp.push(arr[l] <= arr[r] ? arr[l++] : arr[r++]);
-      cnt++;
-    }
-    while (l <= mid) tmp.push(arr[l++]);
-    while (r <= right) tmp.push(arr[r++]);
-    for (let i = 0; i < right - left + 1; i++) {
-      await later(50);
-      if (keyA != keyB) return;
-      if (cnt-- > 0) cmps++;
-      setSortingIndexA(left);
-      setSortingIndexB(left + i);
-      setSortingIndexC(right);
-      arr[left + i] = tmp[i];
+    await later(50);
+    if (keyA != keyB) return;
+    let mid = Math.floor((left+right) / 2);
+    setSortingIndexA(mid);
+    let pivot = arr[mid];
+    while (left <= right) {
+      while (arr[left] < pivot){
+        await later(50);
+        if (keyA != keyB) return;
+        cmps++;
+        setSortingIndexB(left);
+        left++;
+      } 
+      while (arr[right] > pivot){
+        await later(50);
+        if (keyA != keyB) return;
+        cmps++;
+        setSortingIndexC(right);
+        right--;
+      }
+      if (left <= right) swap(arr, left++, right--, keyB);
       setArray(Object.assign([], arr));
     }
-    setArray(Object.assign([], arr));
+    return left;
   }
 
-  const Sort = arr => {
+  async function qsort(arr, left, right, keyB) {
+    if (left >= right) return;
+    let mid = await partition(arr, left, right, keyB);
+    await qsort(arr, left, mid - 1, keyB);
+    await qsort(arr, mid, right, keyB);
+  }
+
+  function swap(arr, left, right, keyB) {
+    if (keyA != keyB) return;
+    let tmp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = tmp;
+  }
+
+  const Sort = async arr => {
     cmps = 0;
     let keyB = ++keyA;
-    partition(arr, 0, arr.length - 1, keyB);
+    await qsort(arr, 0, arr.length - 1, keyB);
   };
 
   return (
@@ -113,9 +121,9 @@ const MergeSort = props => {
         <Button variant="outlined" style={{
           width: 100 + "%",
           fontWeight: 'bold'
-        }} onClick={start}>합병정렬 시작</Button>
+        }} onClick={start}>퀵정렬 시작</Button>
       </div>
     </>
   );
 };
-export default MergeSort;
+export default QuickSort;
