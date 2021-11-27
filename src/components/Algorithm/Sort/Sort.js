@@ -7,6 +7,7 @@ import InsertionSort from './InsertionSort';
 import MergeSort from './MergeSort';
 import HeapSort from './HeapSort';
 import QuickSort from './QuickSort';
+import CountSort from './CountSort';
 import './Sort.scss';
 
 class Sort extends Component {
@@ -105,6 +106,18 @@ class Sort extends Component {
                   값들을 여러개의 부분 집합으로 분해하고 정렬하여 전체를 정렬하는 방법
                 </p>
                 <h3 id="계수정렬">계수 정렬</h3>
+                <p>값의 범위가 크지 않고 데이터의 수가 클 때 유용한 알고리즘</p>
+                <p>원소의 범위 크기에 해당하는 배열을 만들고 데이터의 값을 넣고 개수를 세서 정렬</p>
+                <p>시간복잡도 : O(n+k) [n : 데이터의 수, k : 데이터의 범위]</p>
+                <div className="sortchart">
+                  <CountSort />
+                </div>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/7328e3cc3c07095efcc15d00d13ae697"
+                    loadingClass="loading__screen"
+                  />
+                </div>
+                
                 <h3 id="기수정렬">기수 정렬</h3>
                 <h2 id="시간복잡도비교">시간복잡도 비교</h2>
                 <img src={process.env.PUBLIC_URL + '/img/Algorithm/sort-time-complexity2.png'} alt="Sort-complexity" />
