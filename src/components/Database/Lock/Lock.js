@@ -79,6 +79,11 @@ class Lock extends Component {
                 <h3 id="NextkeyLock">Next-key Lock</h3>
                 <p>범위를 지정한 쿼리를 수행할 경우 Record Lock과 Gap Lock이 복합적으로 사용된다</p>
                 <img src={process.env.PUBLIC_URL + '/img/Database/lock-next-key.png'} alt="next-key-lock" />
+                <h3 id="InsertintentionLock">Insert intention Lock</h3>
+                <p>Insert 문에서 InnoDB 엔진 내부적으로 implicit하게 획득하는 특수한 형태의 Gap Lock</p>
+                <p>Gap안의 다른 위치에 INSERT문을 동시에 수행 하는 것이 목적</p>
+                <p>Insert intention Lock 은 서로 충돌하지 않는다</p>
+                <p>유니크 인덱스에서 해당 키만 잠그는 방식으로 겹치지 않으면 바로 진행 가능(InnoDB)</p>
                 <h3 id="AUTOINCLock">AUTO-INC Lock</h3>
                 <p>여러 트랜잭션이 동시에 수행될 때, AUTO_INCREMENT 컬럼을 일관성 있게 만들기 위해 필요한 Lock</p>
                 <h2 id="Deadlock">데드락(Deadlock)</h2>
@@ -96,8 +101,7 @@ class Lock extends Component {
                 <p>트랜잭션 내 여러 데이터 수정시에 Lock의 순서를 순차적으로 만든다</p>
                 <p>ex) A, B, C 테이블 수정시 A → B → C 순으로 수정하면 데드락 위험을 줄일 수 있다</p>
                 <h3 id="deadlockstatus">데드락 상태 확인 명령어</h3>
-                
-
+                <p>SHOW ENGINE INNODB STATUS;</p>
                 <h1 id="출처">출처</h1>
                 <p><a href="https://suhwan.dev/2019/06/09/transaction-isolation-level-and-lock/" target="_blank">Lock으로 이해하는 Transaction의 Isolation Level</a></p>
                 <p><a href="https://www.letmecompile.com/mysql-innodb-lock-deadlock/" target="_blank">MySQL InnoDB lock, deadlock 이해하기</a></p>
@@ -107,7 +111,7 @@ class Lock extends Component {
                 </nav>
               </div>
             </div>
-            <Tocbot />
+            <Tocbot />  
           </main>
         </Fragment>
       </>
