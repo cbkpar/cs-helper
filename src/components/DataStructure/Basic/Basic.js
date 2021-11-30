@@ -41,10 +41,11 @@ class Basic extends Component {
                 <p>2. Quadratic probing : 2 차 함수를 이용해 탐색할 위치를 찾는다</p>
                 <p>3. Double hashing probing : 하나의 해쉬 함수에서 충돌이 발생하면 2 차 해쉬 함수를 이용해 새로운 주소를 할당한다.</p>
                 <h3 id="SeparateChaining">분리연결법(Separate Chaining)</h3>
-                <p>JAVA 7 에서는 해당 방식을 사용하여 HashMap을 구현한다</p>
                 <p>일반적으로 개방주소법보다 빠르다</p>
+                <p>JAVA 8 이후 에서는 해당 방식을 복합적으로 사용하여 HashMap을 구현한다</p>
                 <p>1. Linked List : 버킷을 연결리스트로 만들어 Collision 발생시 bucket의 list에 추가한다</p>
                 <p>삽입, 삭제가 간단하지만 작은 데이터의 오버헤드가 부담된다.</p>
+                <p>JAVA 7 에서는 해당 방식을 사용하여 HashMap을 구현한다</p>
                 <p>2. Read-Black Tree : 연결리스트 대신 트리를 사용한다.</p>
                 <p>key-value 쌍의 개수가 적을 경우 연결리스트를 사용한다(트리는 기본적으로 메로리 사용량이 크다)</p>
                 <h3 id="개방주소법vs분리연결법">개방주소법 vs 분리연결법</h3>
