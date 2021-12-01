@@ -68,11 +68,56 @@ class Queue extends Component {
                     loadingClass="loading__screen"
                   />
                 </div>
+                <img src={process.env.PUBLIC_URL + '/img/DataStructure/queue-methods.png'} alt="queue-methods" />
                 <h2 id="Array">Deque</h2>
+                <div className="video"><iframe src="https://www.youtube.com/embed/DEXpIZpfqiQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                
+                <p>덱은 앞, 뒤로 원소를 넣고 뺄 수 있다(큐, 스택)</p>
+                <p>추가하고 삭제하는과정에서 O(1)의 시간복잡도를 갖게된다</p>
+                <p>Queue 인터페이스를 상속받아서 만든다</p>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/658b69c7f11ab14943d3c36bb293e5a8"
+                    loadingClass="loading__screen"
+                  />
+                </div>
+                <p>Deque은 LinkedList 혹은 ArrayDeque를 통해 구현할 수 있다</p>
+                <p>LinkedList를 이용할 경우 Queue에서 설명한 메커니즘과 같은 원리로 작동한다</p>
+                <p>아래 내용은 ArrayDeque를 사용했을 경우를 설명한다</p>
+                <p>ArrayDeque는 ArrayList의 원리와 비슷하게 작동한다</p>
+                <h3 id="deque_constructor">생성자</h3>
+                <p>생성시에 16개 크기의 공간을 만든다</p>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/1c8203900fadea650a71fbb79521d86d"
+                    loadingClass="loading__screen"
+                  />
+                </div>
+                <h3 id="deque_add">Add</h3>
+                <p>덱의 앞에 추가 할 경우에는 addFirst()를 사용하면 된다</p>
+                <p>덱의 뒤에 추가 할 경우에는 addLast()를 사용하면 된다</p>
+                <p>빈 값을 추가하려고 할 경우 NullPointerException()를 반환한다</p>
+                <p>이때 ArrayDeque은 원형 자료구조로 되어있다고 생각하면 된다</p>
+                <p>head 혹은 tail에 값을 추가하고 head와 tail이 만나면 덱의 공간을 2배로 만들어준다</p>
+                <p>덱의 공간이 너무 커져서 overflow 될 경우 IllegalStateException()을 반환한다</p>
+                <p>이 과정에서 배열복사가 일어나게 되고 시간복잡도는 O(n) 이다</p>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/c00f84adb5f8050b39267fbbeb81f55d"
+                    loadingClass="loading__screen"
+                  />
+                </div>
+                <h3 id="deque_poll">Poll</h3>
+                <p>덱의 앞에서 빼올 경우에는 pollFirst()를 사용하면 된다</p>
+                <p>덱의 뒤에서 빼올 경우에는 pollLast()를 사용하면 된다</p>
+                <p>값이 비어있을 경우 null값을 반환한다</p>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/c3c9397c20bf69570ab99add20c06210"
+                    loadingClass="loading__screen"
+                  />
+                </div>
                 <h2 id="Array">Priority Queue</h2>
                 <h1 id="출처">출처</h1>
                 <p><a href="https://beomseok95.tistory.com/157" target="_blank">Collection에대하여 -1</a></p>
                 <p><a href="https://jinyoungchoi95.tistory.com/29" target="_blank">[JAVA] Collection Interface/ add()와 offer() 차이</a></p>
+                <p><a href="https://tecoble.techcourse.co.kr/post/2021-05-10-stack-vs-deque/" target="_blank">Java 의 Stack 대신 Deque</a></p>
               </article>
               <div className="article-sidebar">
                 <nav className="toc js-toc">
