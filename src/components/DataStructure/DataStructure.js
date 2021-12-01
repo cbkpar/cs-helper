@@ -4,6 +4,7 @@ import Articles from './Articles';
 import Basic from './Basic';
 import Array from './Array';
 import Queue from './Queue';
+import Stack from './Stack';
 
 class DataStructure extends Component {
   render() {
@@ -14,6 +15,7 @@ class DataStructure extends Component {
           <Route path='/Basic/*' element={<Basic />} />
           <Route path='/Array/*' element={<Array />} />
           <Route path='/Queue/*' element={<Queue />} />
+          <Route path='/Stack/*' element={<Stack />} />
         </Routes>
       </>
     )

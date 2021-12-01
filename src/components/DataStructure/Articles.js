@@ -31,11 +31,22 @@ class Articles extends Component {
           </Link>
           <Link to="/DataStructure/Queue" onClick="">
             <figure class="snip1200">
-              <img src={process.env.PUBLIC_URL + '/img/DataStructure/Queue.png'} alt="Array" />
+              <img src={process.env.PUBLIC_URL + '/img/DataStructure/Queue.png'} alt="Queue" />
               <figcaption>
                 <p>Queue, Deque, Priority Queue</p>
                 <div class="heading">
                   <h2><span>큐</span></h2>
+                </div>
+              </figcaption>
+            </figure>
+          </Link>
+          <Link to="/DataStructure/Stack" onClick="">
+            <figure class="snip1200">
+              <img src={process.env.PUBLIC_URL + '/img/DataStructure/Stack.png'} alt="Stack" />
+              <figcaption>
+                <p>Stack, Vector</p>
+                <div class="heading">
+                  <h2><span>스택</span></h2>
                 </div>
               </figcaption>
             </figure>
