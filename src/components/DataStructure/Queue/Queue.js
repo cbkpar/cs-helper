@@ -69,9 +69,8 @@ class Queue extends Component {
                   />
                 </div>
                 <img src={process.env.PUBLIC_URL + '/img/DataStructure/queue-methods.png'} alt="queue-methods" />
-                <h2 id="Array">Deque</h2>
+                <h2 id="Deque">Deque</h2>
                 <div className="video"><iframe src="https://www.youtube.com/embed/DEXpIZpfqiQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                
                 <p>덱은 앞, 뒤로 원소를 넣고 뺄 수 있다(큐, 스택)</p>
                 <p>추가하고 삭제하는과정에서 O(1)의 시간복잡도를 갖게된다</p>
                 <p>Queue 인터페이스를 상속받아서 만든다</p>
@@ -113,11 +112,54 @@ class Queue extends Component {
                     loadingClass="loading__screen"
                   />
                 </div>
-                <h2 id="Array">Priority Queue</h2>
+                <h2 id="priorityqueue">Priority Queue</h2>
+                <div className="video"><iframe src="https://www.youtube.com/embed/AjFlp951nz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <p>우선순위 큐는 우선순위가 높은 순서로 나오는 순서로 되어있다</p>
+                <p>힙구조로 저장되어있기 때문에 그대로 저장된 배열을 출력하면 순서가 섞여있다</p>
+                <img src={process.env.PUBLIC_URL + '/img/DataStructure/queue-pq-toarray.png'} alt="queue-pq-toarray" />
+                <p>poll()을 사용하여 출력하면 원소를 빼낼때마다 힙구조를 재조정하기 때문에 순서대로 나오게 된다</p>
+                <img src={process.env.PUBLIC_URL + '/img/DataStructure/queue-pq-toarray2.png'} alt="queue-pq-toarray2" />
+                <h3 id="priorityqueue_constructor">생성자</h3>
+                <p>크기를 설정할 수 있으며 기본값으로 11을 갖는다</p>
+                <p>comparator()을 사용하여 compare()함수를 오버라이딩 하여 우선순위를 정할 수 있다</p>
+                <p>해당 클래스에 compareTo()가 구현되지 않은 상태에서 comparator()를 지정해주지 않으면 예외를 발생시킨다</p>
+                <img src={process.env.PUBLIC_URL + '/img/DataStructure/queue-pq-exception.png'} alt="queue-pq-exception" />
+                <p></p>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/c81b76fd8dac22d4412b7026043023f0"
+                    loadingClass="loading__screen"
+                  />
+                </div>
+                <h3 id="priorityqueue_add">add</h3>
+                <p>허용된 용량을 초과한다면 해당 우선순위큐의 크기를 1.5배로 만든다</p>
+                <p>comparator을 정의해주지 않았을 경우에는 해당 객체의 compareTo()를 사용한다</p>
+                <p>comparator을 정의했을 경우 우선순위큐의 compare()를 사용한다</p>
+                <p>1. 우선순위큐 배열의 마지막에 값을 추가한다</p>
+                <p>2. 새로운 노드를 부모와 비교해가면서 우선순위가 높을 때까지 교환한다</p>
+                <p>이 과정에서 O(logN)의 시간복잡도를 갖는다</p>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/694f99b9e54fdfeab04f549bff703e4d"
+                    loadingClass="loading__screen"
+                    />
+                </div>
+                <h3 id="priorityqueue_poll">poll</h3>
+                <p>comparator을 정의해주지 않았을 경우에는 해당 객체의 compareTo()를 사용한다</p>
+                <p>comparator을 정의했을 경우 우선순위큐의 compare()를 사용한다</p>
+                <p>1. 우선순위큐 루트값을 제거한다</p>
+                <p>2. 우선순위큐의 마지막 값을 루트위치로 옮긴다</p>
+                <p>3. 자식과 비교해가면서 우선순위가 낮을 때까지 교환한다</p>
+                <p>이 과정에서 O(logN)의 시간복잡도를 갖는다</p>
+                <div className="gist">
+                  <ReactEmbedGist gist="cbkpar/bc5cac2f394fcc39c771e26f951823e4"
+                    loadingClass="loading__screen"
+                    />
+                </div>
                 <h1 id="출처">출처</h1>
                 <p><a href="https://beomseok95.tistory.com/157" target="_blank">Collection에대하여 -1</a></p>
                 <p><a href="https://jinyoungchoi95.tistory.com/29" target="_blank">[JAVA] Collection Interface/ add()와 offer() 차이</a></p>
                 <p><a href="https://tecoble.techcourse.co.kr/post/2021-05-10-stack-vs-deque/" target="_blank">Java 의 Stack 대신 Deque</a></p>
+                <p><a href="https://cjh5414.github.io/priorityqueue/" target="_blank">Java 우선순위 큐(Priority Queue) 와 Comparable, Comparator</a></p>
+                <p><a href="https://johngrib.github.io/wiki/heap-sort/" target="_blank">힙 정렬 (Heap Sort)</a></p>
               </article>
               <div className="article-sidebar">
                 <nav className="toc js-toc">
