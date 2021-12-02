@@ -51,6 +51,17 @@ class Articles extends Component {
               </figcaption>
             </figure>
           </Link>
+          <Link to="/DataStructure/Map" onClick="">
+            <figure class="snip1200">
+              <img src={process.env.PUBLIC_URL + '/img/DataStructure/Map.png'} alt="Map" />
+              <figcaption>
+                <p>Map, HashMap, TreeMap, LinkedHashMap</p>
+                <div class="heading">
+                  <h2><span>맵</span></h2>
+                </div>
+              </figcaption>
+            </figure>
+          </Link>
         </div>
       </div>
     )
