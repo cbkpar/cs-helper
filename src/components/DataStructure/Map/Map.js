@@ -86,10 +86,16 @@ class Map extends Component {
                 <p>순서를 위해 Doubly Linked List를 사용하기 때문에 메모리 사용량이 더 크다</p>
                 <img src={process.env.PUBLIC_URL + '/img/DataStructure/map-linkedhashmap-order.png'} alt="linkedhashmap-order" />
                 <h2 id="TreeMap">TreeMap</h2>
+                <p>TreeMap은 AbstractMap을 상속받아 만들어졌다</p>
+                <p>키의 순서가 정렬되어있다 (Comparator 설정 가능)</p>
+                <p>내부는 Red-Black Tree로 구성되어있다</p>
+                <p>따라서 검색과 추가하는 과정에서 O(logN)의 시간 복잡도를 갖는다</p>
+                <img src={process.env.PUBLIC_URL + '/img/DataStructure/map-treemap-order.png'} alt="treemap-order" />
                 <h1 id="출처">출처</h1>
                 <p><a href="https://kutar37.tistory.com/entry/%EC%9E%90%EB%B0%94-HashMap-LinkedHashMap-TreeMap" target="_blank">자바 HashMap, LinkedHashMap, TreeMap</a></p>
                 <p><a href="https://staticclass.tistory.com/104" target="_blank">[자바] HashSet - 생성자, 메소드</a></p>
                 <p><a href="https://sabarada.tistory.com/57" target="_blank">HashMap이란</a></p>
+                <p><a href="https://sabarada.tistory.com/139" target="_blank">[자료구조] 코드로 알아보는 java의 TreeMap</a></p>
               </article>
               <div className="article-sidebar">
                 <nav className="toc js-toc">
