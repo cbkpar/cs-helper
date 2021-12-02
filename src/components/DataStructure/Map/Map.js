@@ -81,6 +81,10 @@ class Map extends Component {
                   />
                 </div>
                 <h2 id="LinkedHashMap">LinkedHashMap</h2>
+                <p>HashMap 클래스를 상속받아 만들기 때문에 HashMap의 기능을 사용할 수 있다</p>
+                <p>HashMap과 다르게 입력받은 순서로 데이터를 저장한다</p>
+                <p>순서를 위해 Doubly Linked List를 사용하기 때문에 메모리 사용량이 더 크다</p>
+                <img src={process.env.PUBLIC_URL + '/img/DataStructure/map-linkedhashmap-order.png'} alt="linkedhashmap-order" />
                 <h2 id="TreeMap">TreeMap</h2>
                 <h1 id="출처">출처</h1>
                 <p><a href="https://kutar37.tistory.com/entry/%EC%9E%90%EB%B0%94-HashMap-LinkedHashMap-TreeMap" target="_blank">자바 HashMap, LinkedHashMap, TreeMap</a></p>
